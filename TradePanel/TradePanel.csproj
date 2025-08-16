@@ -37,6 +37,12 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FuturesTradePanelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FuturesTradePanelForm.Designer.cs">
+      <DependentUpon>FuturesTradePanelForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="TradePanelForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -45,6 +51,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FuturesTradePanelForm.resx">
+      <DependentUpon>FuturesTradePanelForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TradePanelForm.resx">
       <DependentUpon>TradePanelForm.cs</DependentUpon>
     </EmbeddedResource>
