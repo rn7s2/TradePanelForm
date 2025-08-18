@@ -22,6 +22,9 @@ namespace TradePanel
             this.ButtonBuyOpen = new System.Windows.Forms.Button();
             this.ButtonSellClose = new System.Windows.Forms.Button();
             this.CheckBoxSkipTick = new System.Windows.Forms.CheckBox();
+            this.LimitPrice = new System.Windows.Forms.TextBox();
+            this.IncrementPrice = new System.Windows.Forms.VScrollBar();
+            this.ButtonAllCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // AskLabel
@@ -37,18 +40,18 @@ namespace TradePanel
             // 
             // ButtonSellOpen
             // 
-            this.ButtonSellOpen.Location = new System.Drawing.Point(134, 84);
+            this.ButtonSellOpen.Location = new System.Drawing.Point(144, 84);
             this.ButtonSellOpen.Name = "ButtonSellOpen";
-            this.ButtonSellOpen.Size = new System.Drawing.Size(54, 27);
+            this.ButtonSellOpen.Size = new System.Drawing.Size(48, 27);
             this.ButtonSellOpen.TabIndex = 5;
             this.ButtonSellOpen.Text = "卖开";
             this.ButtonSellOpen.UseVisualStyleBackColor = true;
             // 
             // ButtonBuyClose
             // 
-            this.ButtonBuyClose.Location = new System.Drawing.Point(190, 84);
+            this.ButtonBuyClose.Location = new System.Drawing.Point(194, 84);
             this.ButtonBuyClose.Name = "ButtonBuyClose";
-            this.ButtonBuyClose.Size = new System.Drawing.Size(54, 27);
+            this.ButtonBuyClose.Size = new System.Drawing.Size(48, 27);
             this.ButtonBuyClose.TabIndex = 6;
             this.ButtonBuyClose.Text = "买平";
             this.ButtonBuyClose.UseVisualStyleBackColor = true;
@@ -67,9 +70,9 @@ namespace TradePanel
             // CurrentVolume
             // 
             this.CurrentVolume.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CurrentVolume.Location = new System.Drawing.Point(12, 51);
+            this.CurrentVolume.Location = new System.Drawing.Point(123, 51);
             this.CurrentVolume.Name = "CurrentVolume";
-            this.CurrentVolume.Size = new System.Drawing.Size(138, 29);
+            this.CurrentVolume.Size = new System.Drawing.Size(55, 29);
             this.CurrentVolume.TabIndex = 1;
             this.CurrentVolume.Text = "-.--";
             this.CurrentVolume.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -77,7 +80,7 @@ namespace TradePanel
             // IncrementVol
             // 
             this.IncrementVol.AllowDrop = true;
-            this.IncrementVol.Location = new System.Drawing.Point(148, 52);
+            this.IncrementVol.Location = new System.Drawing.Point(176, 52);
             this.IncrementVol.Name = "IncrementVol";
             this.IncrementVol.Size = new System.Drawing.Size(15, 27);
             this.IncrementVol.TabIndex = 2;
@@ -86,16 +89,16 @@ namespace TradePanel
             // 
             this.ButtonBuyOpen.Location = new System.Drawing.Point(11, 84);
             this.ButtonBuyOpen.Name = "ButtonBuyOpen";
-            this.ButtonBuyOpen.Size = new System.Drawing.Size(54, 27);
+            this.ButtonBuyOpen.Size = new System.Drawing.Size(48, 27);
             this.ButtonBuyOpen.TabIndex = 3;
             this.ButtonBuyOpen.Text = "买开";
             this.ButtonBuyOpen.UseVisualStyleBackColor = true;
             // 
             // ButtonSellClose
             // 
-            this.ButtonSellClose.Location = new System.Drawing.Point(67, 84);
+            this.ButtonSellClose.Location = new System.Drawing.Point(60, 84);
             this.ButtonSellClose.Name = "ButtonSellClose";
-            this.ButtonSellClose.Size = new System.Drawing.Size(54, 27);
+            this.ButtonSellClose.Size = new System.Drawing.Size(48, 27);
             this.ButtonSellClose.TabIndex = 4;
             this.ButtonSellClose.Text = "卖平";
             this.ButtonSellClose.UseVisualStyleBackColor = true;
@@ -103,12 +106,39 @@ namespace TradePanel
             // CheckBoxSkipTick
             // 
             this.CheckBoxSkipTick.AutoSize = true;
-            this.CheckBoxSkipTick.Location = new System.Drawing.Point(175, 57);
+            this.CheckBoxSkipTick.Location = new System.Drawing.Point(199, 57);
             this.CheckBoxSkipTick.Name = "CheckBoxSkipTick";
-            this.CheckBoxSkipTick.Size = new System.Drawing.Size(72, 16);
+            this.CheckBoxSkipTick.Size = new System.Drawing.Size(48, 16);
             this.CheckBoxSkipTick.TabIndex = 7;
-            this.CheckBoxSkipTick.Text = "暂停行情";
+            this.CheckBoxSkipTick.Text = "暂停";
             this.CheckBoxSkipTick.UseVisualStyleBackColor = true;
+            // 
+            // LimitPrice
+            // 
+            this.LimitPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LimitPrice.Location = new System.Drawing.Point(12, 51);
+            this.LimitPrice.Name = "LimitPrice";
+            this.LimitPrice.Size = new System.Drawing.Size(93, 29);
+            this.LimitPrice.TabIndex = 8;
+            this.LimitPrice.Text = "-.--";
+            this.LimitPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // IncrementPrice
+            // 
+            this.IncrementPrice.AllowDrop = true;
+            this.IncrementPrice.Location = new System.Drawing.Point(103, 52);
+            this.IncrementPrice.Name = "IncrementPrice";
+            this.IncrementPrice.Size = new System.Drawing.Size(15, 27);
+            this.IncrementPrice.TabIndex = 9;
+            // 
+            // ButtonAllCancel
+            // 
+            this.ButtonAllCancel.Location = new System.Drawing.Point(109, 84);
+            this.ButtonAllCancel.Name = "ButtonAllCancel";
+            this.ButtonAllCancel.Size = new System.Drawing.Size(34, 27);
+            this.ButtonAllCancel.TabIndex = 10;
+            this.ButtonAllCancel.Text = "撤";
+            this.ButtonAllCancel.UseVisualStyleBackColor = true;
             // 
             // FuturesTradePanelForm
             // 
@@ -116,6 +146,9 @@ namespace TradePanel
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(254, 119);
+            this.Controls.Add(this.ButtonAllCancel);
+            this.Controls.Add(this.IncrementPrice);
+            this.Controls.Add(this.LimitPrice);
             this.Controls.Add(this.CheckBoxSkipTick);
             this.Controls.Add(this.ButtonSellClose);
             this.Controls.Add(this.ButtonBuyOpen);
@@ -145,5 +178,8 @@ namespace TradePanel
         private System.Windows.Forms.Button ButtonBuyOpen;
         private System.Windows.Forms.Button ButtonSellClose;
         private System.Windows.Forms.CheckBox CheckBoxSkipTick;
+        private System.Windows.Forms.TextBox LimitPrice;
+        private System.Windows.Forms.VScrollBar IncrementPrice;
+        private System.Windows.Forms.Button ButtonAllCancel;
     }
 }
