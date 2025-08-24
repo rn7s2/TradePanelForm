@@ -6,7 +6,7 @@ using System.Windows.Forms;
 namespace TradePanel
 {
 
-    public partial class TradePanelForm : Form
+    public partial class NettingTradePanelForm : Form
     {
         private const int CP_NOCLOSE_BUTTON = 0x200;
         protected override CreateParams CreateParams
@@ -19,7 +19,7 @@ namespace TradePanel
             }
         }
 
-        public TradePanelForm()
+        public NettingTradePanelForm()
         {
             InitializeComponent();
         }
